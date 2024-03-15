@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<html>
 <head>
 
 </head>
@@ -11,6 +12,9 @@
 .checkbox.pull-right { margin: 0; }
 .pl-ziro { padding-left: 0px; }
 </style>
+<body>
+    
+
 <br><br>
 <marquee scrolldelay="50">ITS FAKE PAYMENT PAGE. WE DONOT STORE YOUR DATA</marquee>
 <marquee scrolldelay="50">ITS JUST FOR DEMO</marquee>
@@ -36,7 +40,7 @@
                         <label for="cardNumber">
                             CARD NUMBER</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                            <input type="number" class="form-control" id="cardNumber" placeholder="Valid Card Number"
                                 required autofocus />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                         </div>
@@ -47,17 +51,17 @@
                                 <label for="expityMonth">
                                     EXPIRY DATE</label>
                                 <div class="col-xs-6 col-lg-6 pl-ziro">
-                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+                                    <input type="number" class="form-control" id="expityMonth" placeholder="MM" required />
                                 </div>
                                 <div class="col-xs-6 col-lg-6 pl-ziro">
-                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+                                    <input type="number" class="form-control" id="expityYear" placeholder="YY" required /></div>
                             </div>
                         </div>
                         <div class="col-xs-5 col-md-5 pull-right">
                             <div class="form-group">
                                 <label for="cvCode">
                                     CV CODE</label>
-                                <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+                                <input type="number" class="form-control" id="cvCode" placeholder="CV" required />
                             </div>
                         </div>
                     </div>
@@ -73,6 +77,45 @@
         </div>
     </div>
 </div>
+<script>
+    // Attach event listeners to validate input fields
+    document.addEventListener("DOMContentLoaded", function() {
+        const cardNumberInput = document.getElementById("cardNumber");
+        const expityMonthInput = document.getElementById("expityMonth");
+        const expityYearInput = document.getElementById("expityYear");
+        const cvCodeInput = document.getElementById("cvCode");
 
+        cardNumberInput.addEventListener("input", function() {
+            this.value = this.value.replace(/\D/g, ''); // Allow only numbers
+            if (this.value.length > 16) {
+                this.value = this.value.slice(0, 16); // Limit to 16 digits
+            }
+        });
+
+        expityMonthInput.addEventListener("input", function() {
+            this.value = this.value.replace(/\D/g, ''); // Allow only numbers
+            if (this.value.length > 2) {
+                this.value = this.value.slice(0, 2); // Limit to 2 digits
+            }
+        });
+
+        expityYearInput.addEventListener("input", function() {
+            this.value = this.value.replace(/\D/g, ''); // Allow only numbers
+            if (this.value.length > 2) {
+                this.value = this.value.slice(0, 2); // Limit to 2 digits
+            }
+        });
+
+        cvCodeInput.addEventListener("input", function() {
+            this.value = this.value.replace(/\D/g, ''); // Allow only numbers
+            if (this.value.length > 3) {
+                this.value = this.value.slice(0, 3); // Limit to 3 digits
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
 
 {% endblock content %}

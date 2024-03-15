@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #b92b27, #1565c0);
+        }
+
+        .box {
+            width: 400px;
+            padding: 40px;
+            margin: 100px 70%;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .box h1 {
+            color: #333;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .box p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .box input[type="text"],
+        .box input[type="password"] {
+            border: 0;
+            background: #f2f2f2;
+            display: block;
+            margin: 10px auto;
+            /* Add margin to create a gap */
+            text-align: center;
+            border: 2px solid transparent;
+            padding: 14px 20px;
+            width: 100%;
+            outline: none;
+            color: #333;
+            border-radius: 24px;
+            transition: border-color 0.3s;
+        }
+
+
+        .box input[type="text"]:focus,
+        .box input[type="password"]:focus {
+            border-color: #3498db;
+        }
+
+        .box input[type="submit"] {
+            border: 0;
+            background: #3498db;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid transparent;
+            padding: 14px 40px;
+            outline: none;
+            color: #fff;
+            border-radius: 24px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .box input[type="submit"]:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "ecom/navbar.html" %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="box" method="post">
+                        {% csrf_token %}
+                        <h1>Customer Login</h1>
+                        <p class="text-muted"> Please enter your login and password!</p>
+                        {% render_field form.username class="form-control" placeholder="Username" %}
+                        {% render_field form.password class="form-control" placeholder="Password" %}
+                        <input type="submit" name="" value="Login">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

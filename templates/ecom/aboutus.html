@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - The Tasty Bistro</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      p {
+        line-height: 1.6;
+      }
+
+      .about-image {
+        text-align: center;
+      }
+
+      .about-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>About Us</h1>
+      <div class="about-image">
+        <img src="{% static "images/hotel1.png" %}" alt="Restaurant Image">
+      </div>
+      <p>
+        Khanakhazana is the brainchild of four passionate individuals: Jaseel,
+        Bishar, Salih, and Jazeem. Together, they envisioned a platform that
+        would redefine the online food ordering experience. With a shared love
+        for culinary excellence and a commitment to convenience, they set out to
+        create a digital space where people could explore a diverse menu of
+        delicious dishes from the comfort of their homes..
+      </p>
+      <p>
+        At Khanakhazana, our mission is simple: to delight customers with
+        mouthwatering flavors and exceptional service. From traditional
+        favorites to innovative creations, our menu reflects our dedication to
+        quality and authenticity. With just a few clicks, customers can embark
+        on a culinary journey curated by our expert chefs. Join us at
+        Khanakhazana and experience the perfect blend of convenience and
+        gastronomic pleasure.
+      </p>
+    </div>
+  </body>
+</html>

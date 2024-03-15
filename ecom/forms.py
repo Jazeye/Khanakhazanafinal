@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from . import models
+from django.core.exceptions import ValidationError
 
 
 class CustomerUserForm(forms.ModelForm):
@@ -39,7 +40,13 @@ class OrderForm(forms.ModelForm):
         fields=['status']
 
 #for contact us page
+
+def validate_name(value):
+    if not value.isalpha():
+        raise ValidationError("Name must contain only letters.")
+
 class ContactusForm(forms.Form):
-    Name = forms.CharField(max_length=30)
+    Name = forms.CharField(max_length=30, validators=[validate_name])
     Email = forms.EmailField()
-    Message = forms.CharField(max_length=500,widget=forms.Textarea(attrs={'rows': 3, 'cols': 30}))
+    Message = forms.CharField(max_length=500, widget=forms.Textarea(attrs={'rows': 3, 'cols': 30}))
+

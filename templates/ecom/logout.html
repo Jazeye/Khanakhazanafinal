@@ -1,12 +1,53 @@
 {% extends 'ecom/homebase.html' %}
 {% load static %}
 {% block content %}
-<br><br><br>
-<img src="{% static "images/logout_img.png" %}"  style="width:800px; height:100px; padding-left:400px;">
-
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br>
+<!-- <img src="{% static "images/logout_img.png" %}"  style="width:900px; height:100%; padding-left:450px; padding-top: 20%;"> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Logout</title>
+<style>
+    .logout-container {
+        text-align: center;
+        padding: 40px;
+        height: 650px;
+        border-radius: 10px;
+        background-color: #976f4fb7;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    p {
+        color: #666;
+        margin-bottom: 30px;
+    }
+    .btn {
+        padding: 10px 20px;
+        background-color: #0d1048;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #096c97;
+    }
+</style>
+</head>
+<body>
+    <div class="logout-container">
+        <h1>Thank You for Visiting!</h1>
+        <p>You have been successfully logged out.</p>
+        <a href="{% url 'index' %}" class="btn">Login Again</a>
+    </div>
+</body>
+</html>
 
 
 {% endblock content %}

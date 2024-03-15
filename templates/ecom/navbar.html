@@ -1,3 +1,4 @@
+{% load static %}
 <html>
 
 <head>
@@ -239,7 +240,7 @@
         </div>
 
         <div class="navbar-search smallsearch col-sm-5 col-xs-11">
-          <form action="/search" method="get">
+          <form id="searchForm" action="/search" method="get">
             <div class="row">
               <input class="navbar-input col-xs-11" type="search" placeholder="Search for tasty food items" name="query"
                 id="query" />
@@ -250,6 +251,7 @@
                   </path>
                 </svg>
               </button>
+
             </div>
           </form>
         </div>
@@ -317,6 +319,7 @@
       }
     });
   </script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

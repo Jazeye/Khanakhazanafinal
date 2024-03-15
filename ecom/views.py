@@ -252,6 +252,14 @@ def add_to_cart_view(request,pk):
 
     return response
 
+def index(request):
+    # Your existing view logic goes here
+
+    # Check if the payment_success parameter is present in the URL
+    if 'payment_success' not in request.GET:
+        messages.info(request, 'Added to cart successfully!')
+
+    return render(request, 'index.html', context)
 
 
 # for checkout of cart

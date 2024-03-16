@@ -1,67 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
   <style>
     /*---------------------------------------
    Social section
 -----------------------------------------*/
     footer {
-      padding: 0px 0px 0px 0px;
-      background-color: black;
-      margin: 0px;
-  
-    }
-
-    .fa {
-      padding: 20px;
-      font-size: 23px;
-      width: 60px;
+      background-color: #6b4e37;
+      color: #fff;
+      padding: 30px 0;
       text-align: center;
-      text-decoration: none;
-      margin: 5px 2px;
+    }
+
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .social-icons li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social-icons a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
       border-radius: 50%;
+      background-color: #976f4fb7;
+      color: #fff;
+      font-size: 20px;
+      transition: background-color 0.3s ease;
     }
 
-    .fa:hover {
-      opacity: 0.5;
-      text-decoration: none;
-    }
-
-    .fa-facebook {
-      background: #3B5998;
-      color: white;
-      margin-top: 30px;
-    }
-
-    .fa-whatsapp {
-      background: #25d366;
-      color: white;
-    }
-
-    .fa-twitter {
-      background: #55ACEE;
-      color: white;
-    }
-
-    .fa-instagram {
-      background: #125688;
-      color: white;
+    .social-icons a:hover {
+      background-color: #007bff;
     }
 
     p {
-      text-align: center;
-
+      margin-top: 20px;
     }
   </style>
 </head>
 
-<footer>
-
+<body>
+  <footer>
+    <ul class="social-icons">
+      <li><a href="#" class="fa fa-facebook"></a></li>
+      <li><a href="#" class="fa fa-twitter"></a></li>
+      <li><a href="#" class="fa fa-instagram"></a></li>
+      <li><a href="#" class="fa fa-whatsapp"></a></li>
+    </ul>
+    <p>Follow us on social media</p>
+  </footer>
+</body>
 
 </html>

@@ -38,10 +38,11 @@ py manage.py createsuperuser
 ## HOW TO RUN THIS PROJECT
 - Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
 - Create a Virtual Environment out side of your project folder(Optional but Recommended): If you haven't already created a virtual environment for your Django project, you can create one using virtualenv or venv. This step helps keep your project dependencies isolated from other projects.
-
+```
 python3 -m venv myenv
 env1\Scripts\activate 
 cd .\projectname\ 
+```
 - Open Terminal and Execute Following Commands :
 ``` 
 pip install django==3.0.5

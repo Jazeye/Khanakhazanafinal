@@ -12,11 +12,13 @@ document
   });
 
 // scrollrevel
-ScrollReveal({ 
-    reset: true, 
-    distance: '80px',
-    duration :2000,
-    delay:200
+document.addEventListener('DOMContentLoaded', function() {
+    ScrollReveal({ 
+        reset: true, 
+        distance: '80px',
+        duration: 2000,
+        delay: 200
+    });
 });
 
 ScrollReveal().reveal('#section2,.sec1', { origin:'top' });

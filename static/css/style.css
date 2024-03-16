@@ -350,3 +350,14 @@ body {
     width: 100%;
   }
 }
+
+
+/* image in navbar*/
+.logo{
+    display: inline;
+    height: 147px;
+    width: 154px;
+    margin-bottom: -56px;
+    padding-bottom: 16px;
+    margin-top: -25px;
+}

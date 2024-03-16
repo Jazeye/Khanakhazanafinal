@@ -237,20 +237,28 @@ def add_to_cart_view(request,pk):
     response = render(request, 'ecom/index.html',{'products':products,'product_count_in_cart':product_count_in_cart})
 
     #adding product id to cookies
+def add_to_cart_view(request, pk):
     if 'product_ids' in request.COOKIES:
         product_ids = request.COOKIES['product_ids']
-        if product_ids=="":
-            product_ids=str(pk)
+        if product_ids == "":
+            product_ids = str(pk)
         else:
-            product_ids=product_ids+"|"+str(pk)
+            product_ids = product_ids + "|" + str(pk)
+        response = redirect('index')  # Redirect to the desired page after adding the product
         response.set_cookie('product_ids', product_ids)
+        product = models.Product.objects.get(id=pk)
+        messages.info(request, 'Added to cart successfully!')
+        return response
     else:
+        response = redirect('index')  # Redirect to the desired page after adding the product
         response.set_cookie('product_ids', pk)
+        product = models.Product.objects.get(id=pk)
+        messages.info(request, 'Added to cart successfully!')
+        return response
 
-    product=models.Product.objects.get(id=pk)
-    messages.info(request, '  Added to cart successfully!')
+    # In case there's an unexpected code path, return a redirect response
+    return redirect('index')
 
-    return response
 
 def index(request):
     # Your existing view logic goes here

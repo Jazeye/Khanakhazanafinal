@@ -443,11 +443,9 @@
 
 </body>
 <script>
-  {%if messages %}
-  {%for message in messages %}
-  alert('{{message}}');
+  {% for message in messages %}
+    alert('{{ message }}');
   {% endfor %}
-  {% endif %}
 </script>
 
 </html>

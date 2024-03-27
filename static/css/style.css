@@ -29,8 +29,8 @@ html {
 #section2 h2 {
   text-align: center;
   padding-top: 100px;
+  margin-top: 200px;
 }
-
 #btn {
   border: none;
   border-radius: 5px;

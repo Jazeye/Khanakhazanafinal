@@ -21,5 +21,5 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal("#section2,.sec1", { origin: "top" });
-ScrollReveal().reveal("#section2,#btn", { origin: "bottom" });
+ScrollReveal().reveal("#section2,.column", { origin: "bottom" });
 
